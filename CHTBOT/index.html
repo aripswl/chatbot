@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SE2026 - Asisten Virtual SE</title>
+
+    <!-- ✅ Google Fonts: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ CSS -->
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+
+  <body>
+    <div class="chat-container">
+      <!-- ✅ Header dengan logo -->
+      <div class="chat-header">
+        <div class="header-left">
+          <img
+            src="logo bps.png"
+            alt="Logo bps"
+            class="logo"
+          />
+          <div class="header-text">
+            <div class="sitatik-title">SiTatik</div>
+            <div class="subtext">Asisten Sensus Ekonomi</div>
+          </div>
+        </div>
+
+        <div class="language-switcher-inside">
+          <select
+            id="language"
+            onchange="changeLanguage(this.value)"
+          >
+            <option value="id">ID</option>
+            <option value="su">SU</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ✅ Area percakapan -->
+      <div
+        id="chatbox"
+        class="chat-box"
+      ></div>
+
+      <!-- ✅ Input teks pengguna -->
+      <div class="text-input-area">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Ketik pesan di sini..."
+        />
+        <button onclick="handleTextInput()">Kirim</button>
+      </div>
+    </div>
+
+    <!-- ✅ JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
