@@ -1,0 +1,198 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.subtext {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.chat-container {
+  width: 400px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #aacef5, #00c6ff);
+  color: #000;
+  padding: 15px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between; /* ⬅️ kiri & kanan */
+  align-items: center;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-switcher-inside {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.language-switcher-inside select {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.language-switcher-inside {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.language-switcher-inside select {
+  font-size: 10px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ffffff;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sitatik-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.chat-header .logo {
+  height: 32px;
+  width: auto;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.chat-box {
+  padding: 15px;
+  height: 350px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  background: #e8e8e8;
+  display: inline-block; /* ✅ agar lebar mengikuti isi */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: pre-line;
+  font-size: 10px;
+  align-self: flex-start; /* agar tetap rata kiri */
+}
+
+/* ✅ Pesan dari user (sebelah kanan) tanpa background */
+.user-message {
+  background-color: transparent;
+  align-self: flex-end;
+  text-align: right;
+  padding: 0;
+  display: inline-block;
+}
+
+/* ✅ Gaya tombol umum (bot) */
+.chat-button {
+  display: block;
+  margin: 5px 0;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: auto;
+  max-width: 100%;
+  cursor: pointer;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* ✅ Gaya tombol menu & submenu dari user (di kanan) */
+.user-message .chat-button {
+  background-color: #e0eff8; /* Biru muda */
+  color: #000000; /* ✅ Teks hitam */
+  text-align: right;
+  border: none;
+  box-shadow: none;
+  font-size: 10px; /* ✅ Ukuran tombol submenu */
+}
+
+.user-message .chat-button:hover {
+  background-color: #5bc4fa;
+}
+
+/* Hover untuk tombol bot */
+.chat-button:hover {
+  background-color: #0056b3;
+}
+
+/* ✅ Area tombol input awal (jika dipakai) */
+.input-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.input-area button {
+  flex: 1 1 45%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* ✅ Area input teks user */
+.text-input-area {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.text-input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.text-input-area button {
+  padding: 10px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
