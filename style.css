@@ -1,10 +1,14 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  padding: 40px;
+  align-items: stretch;
+  min-height: 100vh;
 }
+
 .subtext {
   font-size: 10px;
   font-style: italic;
@@ -13,10 +17,14 @@ body {
 }
 
 .chat-container {
-  width: 400px;
+  width: 100%;
+  max-width: 480px;
+  height: 100vh;
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .chat-header {
@@ -90,7 +98,7 @@ body {
 
 .chat-box {
   padding: 15px;
-  height: 350px;
+  flex: 1;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
