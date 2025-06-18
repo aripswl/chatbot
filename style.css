@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: stretch;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* ✅ Container Chatbot */
