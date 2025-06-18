@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 /* ✅ Font & Reset Layout */
 body {
   font-family: 'Poppins', sans-serif;
@@ -11,8 +7,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: 100dvh;
+  overflow: auto;
 }
 
 /* ✅ Container Chatbot */
