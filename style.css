@@ -1,3 +1,4 @@
+/* ✅ Font & Reset Layout */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f4f4f4;
@@ -9,13 +10,7 @@ body {
   min-height: 100vh;
 }
 
-.subtext {
-  font-size: 10px;
-  font-style: italic;
-  opacity: 0.9;
-  margin-top: 4px;
-}
-
+/* ✅ Container Chatbot */
 .chat-container {
   width: 100%;
   max-width: 480px;
@@ -27,13 +22,13 @@ body {
   box-shadow: none;
 }
 
+/* ✅ Header */
 .chat-header {
   background: linear-gradient(135deg, #aacef5, #00c6ff);
   color: #000;
   padding: 15px;
-  border-radius: 8px 8px 0 0;
   display: flex;
-  justify-content: space-between; /* ⬅️ kiri & kanan */
+  justify-content: space-between;
   align-items: center;
   position: relative;
 }
@@ -42,46 +37,6 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.language-switcher-inside {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-}
-
-.language-switcher-inside select {
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: none;
-  background-color: white;
-  color: #007bff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.language-switcher-inside {
-  margin-left: auto;
-  margin-right: 5px;
-}
-
-.language-switcher-inside select {
-  font-size: 10px;
-  padding: 5px 8px;
-  border-radius: 4px;
-  border: none;
-  background-color: #ffffff;
-  color: #007bff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.sitatik-title {
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
 }
 
 .chat-header .logo {
@@ -96,6 +51,64 @@ body {
   line-height: 1.2;
 }
 
+.sitatik-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subtext {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+/* ✅ Menu ☰ */
+.menu-wrapper {
+  position: relative;
+}
+
+.menu-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 99;
+  min-width: 160px;
+}
+
+.menu-dropdown button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #010203;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.menu-dropdown button:hover {
+  background: #f0f0f0;
+}
+
+/* ✅ Area Chat */
 .chat-box {
   padding: 15px;
   flex: 1;
@@ -104,18 +117,19 @@ body {
   flex-direction: column;
 }
 
+/* ✅ Pesan Bot & User */
 .chat-message {
   background: #e8e8e8;
-  display: inline-block; /* ✅ agar lebar mengikuti isi */
+  display: inline-block;
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
   white-space: pre-line;
   font-size: 10px;
-  align-self: flex-start; /* agar tetap rata kiri */
+  align-self: flex-start;
+  max-width: 85%;
 }
 
-/* ✅ Pesan dari user (sebelah kanan) tanpa background */
 .user-message {
   background-color: transparent;
   align-self: flex-end;
@@ -124,7 +138,7 @@ body {
   display: inline-block;
 }
 
-/* ✅ Gaya tombol umum (bot) */
+/* ✅ Tombol Menu & Submenu */
 .chat-button {
   display: block;
   margin: 5px 0;
@@ -140,46 +154,20 @@ body {
   text-align: center;
 }
 
-/* ✅ Gaya tombol menu & submenu dari user (di kanan) */
 .user-message .chat-button {
-  background-color: #e0eff8; /* Biru muda */
-  color: #000000; /* ✅ Teks hitam */
+  background-color: #e0eff8;
+  color: #000;
   text-align: right;
   border: none;
   box-shadow: none;
-  font-size: 10px; /* ✅ Ukuran tombol submenu */
 }
 
+.chat-button:hover,
 .user-message .chat-button:hover {
   background-color: #5bc4fa;
 }
 
-/* Hover untuk tombol bot */
-.chat-button:hover {
-  background-color: #0056b3;
-}
-
-/* ✅ Area tombol input awal (jika dipakai) */
-.input-area {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  padding: 10px;
-  border-top: 1px solid #ddd;
-}
-
-.input-area button {
-  flex: 1 1 45%;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-/* ✅ Area input teks user */
+/* ✅ Input Area */
 .text-input-area {
   display: flex;
   gap: 5px;
@@ -203,4 +191,36 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 13px;
+}
+
+.typing {
+  font-size: 20px;
+  color: #888;
+  display: flex;
+  gap: 2px;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.dots {
+  animation: blink 1s infinite;
+}
+
+.dots:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
 }
