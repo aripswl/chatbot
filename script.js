@@ -6,7 +6,7 @@ const langData = {
     welcome: '👋 Halo! Selamat datang di Layanan Informasi Sensus Ekonomi 2026 Kabupaten Tasikmalaya.\nSaya SiTatik, siap membantu Anda!',
     prompt: 'Silakan pilih menu di bawah!',
     submenuLabel: 'Pilihan lanjutan:',
-    end: '❌ Terima kasih telah menggunakan layanan Chatbot SiTatik. Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju!',
+    end: 'Terima kasih telah menggunakan layanan Chatbot SiTatik. Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju!',
     buttons: [
       { label: 'Apa itu Sensus Ekonomi', action: 'apa' },
       { label: 'Jadwal & Pelaksanaan', action: 'jadwal' },
@@ -20,7 +20,7 @@ const langData = {
     welcome: '👋 Wilujeng sumping di Layanan Sensus Ekonomi 2026 Kab. Tasikmalaya.\nAbdi SiTatik, siap ngabantosan anjeun!',
     prompt: 'Mangga pilih ménu di handap!',
     submenuLabel: 'Pilihan tambahan:',
-    end: '❌ Hatur nuhun parantos nganggo SiTatik. Dugi ka pendakan deui!',
+    end: 'Hatur nuhun parantos nganggo SiTatik. Dugi ka pendakan deui!',
     buttons: [
       { label: 'Naon ari Sensus Ekonomi', action: 'apa' },
       { label: 'Jadwal & Palaksanaan', action: 'jadwal' },

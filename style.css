@@ -19,13 +19,12 @@ body {
 .chat-container {
   width: 100%;
   max-width: 480px;
-  height: 100vh;
+  height: 100dvh;
   background: white;
   display: flex;
   flex-direction: column;
   border-radius: 0;
   box-shadow: none;
-  overflow: hidden;
 }
 
 /* ✅ Header */
