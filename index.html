@@ -6,9 +6,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>SiTatik - Asisten Sensus Ekonomi</title>
+    <title>Selamat Datang di SiTatik</title>
 
-    <!-- ✅ Google Fonts -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
 
-    <!-- ✅ CSS -->
+    <!-- CSS -->
     <link
       rel="stylesheet"
       href="style.css"
@@ -26,8 +26,8 @@
   </head>
 
   <body>
-    <div class="chat-container">
-      <!-- ✅ Header -->
+    <div class="chat-container pre-chat-container">
+      <!-- Header -->
       <div class="chat-header">
         <div class="header-left">
           <img
@@ -40,44 +40,59 @@
             <div class="subtext">Asisten Sensus Ekonomi</div>
           </div>
         </div>
-
-        <!-- ✅ Menu garis tiga -->
-        <div class="menu-wrapper">
-          <div
-            class="menu-icon"
-            onclick="toggleMenu()"
-          >
-            ☰
-          </div>
-          <div
-            class="menu-dropdown"
-            id="menuDropdown"
-          >
-            <button onclick="changeLanguage('id')">Bahasa Indonesia</button>
-            <button onclick="changeLanguage('su')">Bahasa Sunda</button>
-            <button onclick="endChat()">Akhiri Obrolan</button>
-          </div>
-        </div>
       </div>
 
-      <!-- ✅ Area chat -->
-      <div
-        id="chatbox"
-        class="chat-box"
-      ></div>
+      <!-- Konten Form Awal -->
+      <div class="pre-chat-content">
+        <div class="welcome-card">
+          <h2>Halo!</h2>
+          <p>Selamat datang di Layanan Informasi Sensus Ekonomi 2026 Kabupaten Tasikmalaya.</p>
+          <p>Sebelum kita mulai, yuk isi data diri singkat berikut:</p>
 
-      <!-- ✅ Input pengguna -->
-      <div class="text-input-area">
-        <input
-          type="text"
-          id="userInput"
-          placeholder="Ketik pesan di sini..."
-        />
-        <button onclick="handleTextInput()">Kirim</button>
+          <form
+            class="pre-chat-form"
+            action="chat.html"
+            method="GET"
+            onsubmit="return validateForm()"
+          >
+            <div class="form-group">
+              <label for="name">Nama Lengkap Anda:</label>
+              <input type="text" id="name" name="nama"
+              <!-- ✅ ubah name jadi 'nama' -->
+            </div>
+            <div class="form-group">
+              <label for="age">Umur Anda (dalam tahun):</label>
+              <input
+                type="number"
+                id="age"
+                name="umur"
+                placeholder="Contoh: 22"
+                required
+              />
+            </div>
+            <div class="privacy-note">*Data ini akan digunakan untuk keperluan Sensus Ekonomi 2026 dan dijamin kerahasiaannya sesuai undang-undang.</div>
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Mulai Obrolan
+            </button>
+          </form>
+        </div>
       </div>
     </div>
 
-    <!-- ✅ JS -->
-    <script src="script.js"></script>
+    <!-- JS Validasi (Opsional) -->
+    <script>
+      function validateForm() {
+        const name = document.getElementById('name').value.trim();
+        const age = document.getElementById('age').value.trim();
+        if (!name || !age) {
+          alert('Mohon lengkapi semua data!');
+          return false;
+        }
+        return true;
+      }
+    </script>
   </body>
 </html>
