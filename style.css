@@ -19,6 +19,26 @@ body {
   display: flex;
   flex-direction: column;
 }
+.close-button {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.close-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
 
 html,
 body {
