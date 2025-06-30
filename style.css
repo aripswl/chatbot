@@ -11,13 +11,25 @@ body {
   font-size: 0.75em;
   margin: 0;
   padding: 0;
-  min-height: 100dvh; /* pakai min-height, bukan height */
+  min-height: 100dvh;
   width: 100vw;
   overflow-x: hidden;
   background: linear-gradient(135deg, #e0f2f7, #bbdefb);
   color: #333;
   display: flex;
   flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+  overscroll-behavior: contain;
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
 }
 
 /* ✅ Chat Container */
@@ -429,26 +441,49 @@ body {
 /* ✅ Responsiveness */
 @media (max-width: 480px) {
   body {
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
 
   .chat-message,
   .chat-button,
   .text-input-area input,
   .text-input-area button {
-    font-size: 0.7em;
+    font-size: 0.85em;
   }
 
   .chat-button {
-    padding: 5px 8px;
+    padding: 6px 10px;
   }
 
   .subtext {
-    font-size: 0.65em;
+    font-size: 0.75em;
   }
 
   .chat-box {
     scroll-behavior: smooth;
+    padding-bottom: 80px;
+  }
+
+  .chat-message,
+  .bot-message,
+  .user-message {
+    max-width: 90%;
+  }
+
+  .text-input-area {
+    padding: 10px 14px;
+  }
+
+  .text-input-area input {
+    padding: 10px 14px;
+  }
+
+  .text-input-area button {
+    padding: 10px 16px;
+  }
+
+  .menu-icon {
+    font-size: 1.2em;
   }
 }
 
@@ -463,6 +498,7 @@ body {
   gap: 1px;
   align-items: flex-end;
 }
+
 @media (max-width: 768px) {
   .text-input-area {
     position: fixed;
@@ -470,23 +506,10 @@ body {
     left: 0;
     width: 100%;
     z-index: 99;
-    padding: 12px 16px;
-    background-color: #ffffff;
     border-top: 1px solid #eee;
   }
 
   .chat-box {
-    padding-bottom: 70px; /* supaya tidak ketimpa input */
-  }
-}
-html,
-body {
-  height: 100%;
-  overscroll-behavior: contain;
-}
-
-@supports (-webkit-touch-callout: none) {
-  body {
-    min-height: -webkit-fill-available;
+    padding-bottom: 70px;
   }
 }
