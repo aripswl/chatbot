@@ -1,30 +1,35 @@
+/* ✅ Reset & Global Setup */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ✅ General Body Styles */
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 0.75em;
   margin: 0;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e0f2f7, #bbdefb);
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #e0f2f7, #bbdefb);
-  color: #333;
-  box-sizing: border-box;
 }
 
 /* ✅ Chat Container */
 .chat-container {
   background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 450px;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  margin: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 /* ✅ Header */
@@ -35,11 +40,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 10;
 }
 
@@ -56,19 +58,19 @@ body {
   padding: 5px;
 }
 
-.sitatik-title {
+.siBima-title {
   font-family: 'Raleway', sans-serif;
-  font-size: 1.8em; /* 🔥 Lebih besar dari sebelumnya */
-  font-weight: 800; /* 🔥 Lebih tebal */
+  font-size: 1.8em;
+  font-weight: 800;
   color: #ffffff;
   letter-spacing: 1px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* 🔥 Tambah bayangan agar lebih “keluar” */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 2px;
 }
 
 .subtext {
-  font-size: 0.8em; /* Ukuran diperbesar */
-  font-style: italic; /* 🔥 Tulisan miring */
+  font-size: 0.8em;
+  font-style: italic;
   font-weight: 500;
   color: #e0e0e0;
   letter-spacing: 0.5px;
@@ -125,13 +127,14 @@ body {
 
 /* ✅ Chat Box */
 .chat-box {
-  flex-grow: 1;
+  flex: 1 1 auto;
   padding: 15px;
   overflow-y: auto;
   background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 /* ✅ Chat Messages */
@@ -153,14 +156,25 @@ body {
   padding: 10px 14px;
   max-width: 80%;
   font-size: 0.8em;
-  line-height: 1.4; /* ✅ rapihkan antarbaris */
+  line-height: 1.4;
   word-wrap: break-word;
   display: block;
-  white-space: normal; /* ✅ agar teks tidak rusak */
+  white-space: normal;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
-/* Tambahkan untuk <span id="welcomeUserName"> */
+.bot-message img,
+.bot-message .avatar,
+.bot-message .bot-avatar,
+.bot-message::before {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 #welcomeUserName {
   font-weight: 600;
   color: #0b51c2;
@@ -194,33 +208,22 @@ body {
   margin: 5px 0;
 }
 
-/* ✅ Hilangkan jika kosong */
 #welcome-message:empty {
-  display: none;
-}
-
-.welcome-message p {
-  margin: 5px 0;
-}
-
-/* ✅ Hapus slot avatar bot */
-.bot-message img,
-.bot-message .avatar,
-.bot-message .bot-avatar,
-.bot-message::before {
   display: none !important;
   visibility: hidden !important;
-  width: 0 !important;
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
+  box-shadow: none !important;
+  background: none !important;
 }
 
+/* ✅ Typing Indicator */
 .typing-indicator {
   display: flex;
-  flex-direction: row; /* ✅ ini penting */
+  flex-direction: row;
   gap: 3px;
-  padding: 10px 10px;
+  padding: 10px;
   border-radius: 12px;
   background: #f0f0f0;
   width: fit-content;
@@ -242,6 +245,7 @@ body {
 .typing-indicator span:nth-child(2) {
   animation-delay: 0.2s;
 }
+
 .typing-indicator span:nth-child(3) {
   animation-delay: 0.4s;
 }
@@ -289,6 +293,7 @@ body {
   border-top: 1px solid #eee;
   background-color: #ffffff;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .text-input-area input {
@@ -313,11 +318,10 @@ body {
   background-color: #1976d2;
 }
 
-/* ✅ Pre-chat Page (index.html) */
+/* ✅ Pre-chat Page */
 .pre-chat-container {
   justify-content: flex-start;
   padding-bottom: 20px;
-  height: auto;
   min-height: 90vh;
   max-height: 95vh;
   overflow-y: auto;
@@ -341,7 +345,6 @@ body {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   max-width: 380px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .welcome-card h2 {
@@ -373,17 +376,26 @@ body {
   color: #333;
 }
 
-.pre-chat-form input {
+.pre-chat-form input,
+.pre-chat-form select {
   width: 100%;
   padding: 8px 10px;
   font-size: 0.75em;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
-  transition: 0.2s border-color ease;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23666' d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  cursor: pointer;
 }
 
-.pre-chat-form input:focus {
+.pre-chat-form input:focus,
+.pre-chat-form select:focus {
   border-color: #2e2eff;
   outline: none;
   box-shadow: 0 0 0 2px rgba(46, 46, 255, 0.1);
@@ -435,10 +447,10 @@ body {
   .subtext {
     font-size: 0.65em;
   }
-}
 
-#welcome-message:empty {
-  display: none;
+  .chat-box {
+    scroll-behavior: smooth;
+  }
 }
 
 /* ✅ Button Wrapper */
@@ -451,55 +463,4 @@ body {
   flex-direction: column;
   gap: 1px;
   align-items: flex-end;
-}
-/* Hilangkan padding kiri dan pastikan rata tengah */
-/* ✅ Welcome Message (bersih tanpa !important) */
-.welcome-message {
-  background-color: #e8f5e9;
-  color: #388e3c;
-  text-align: center;
-  font-size: 0.75em;
-  font-weight: 500;
-  padding: 14px 22px;
-  margin: 20px auto;
-  border-radius: 14px;
-  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.15);
-  max-width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-/* ✅ Sembunyikan total elemen bot-message yang kosong */
-#welcome-message:empty {
-  display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  box-shadow: none !important;
-  background: none !important;
-}
-/* ✅ Styling untuk dropdown <select> pilihan bahasa */
-.pre-chat-form select {
-  width: 100%;
-  padding: 8px 10px;
-  font-size: 0.75em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23666' d='M2 0L0 2h4zM2 5L0 3h4z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 10px;
-  cursor: pointer;
-}
-
-.pre-chat-form select:focus {
-  border-color: #2e2eff;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(46, 46, 255, 0.1);
 }

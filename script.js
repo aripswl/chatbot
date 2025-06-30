@@ -9,12 +9,12 @@ const langData = {
   id: {
     getWelcome: () => `👋 Selamat datang saya <b>Bima</b>! Anda sedang menggunakan <b>Bahasa Indonesia</b>. Silakan ketik pertanyaan seputar Sensus Ekonomi 2026, saya siap membantu!`,
     prompt: 'Silakan ketik pertanyaan Anda!',
-    end: 'Terima kasih telah menggunakan layanan Chatbot SiTatik. Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju!',
+    end: 'Terima kasih telah menggunakan layanan Chatbot SiBima. Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju!',
   },
   su: {
     getWelcome: () => `👋 Wilujeng sumping kuring <b>Bima</b>! Anjeun nuju ngagunakeun <b>Basa Sunda</b>. Mangga ketik patarosan ngeunaan Sénsus Ékonomi 2026, abdi siap ngabantosan!`,
     prompt: 'Mangga ketik patarosan anjeun!',
-    end: 'Hatur nuhun parantos nganggo SiTatik. Dugi ka pendakan deui!',
+    end: 'Hatur nuhun parantos nganggo SiBima. Dugi ka pendakan deui!',
   },
 };
 
@@ -25,7 +25,7 @@ const responses = [
     su: 'Sénsus Ékonomi nyaéta pendataan lengkep sadaya kagiatan ékonomi di Indonésia kajaba sektor pertanian.',
   },
   {
-    keywords: ['jadwal', 'kapan sensus', 'waktu sensus'],
+    keywords: ['jadwal', 'kapan sensus', 'waktu sensus', 'kapan'],
     id: 'Sensus Ekonomi 2026 dilaksanakan bulan Mei–Juni 2026 di seluruh Indonesia.',
     su: 'Sénsus Ékonomi 2026 dilaksanakeun dina bulan Méi–Juni 2026 di sakuliah Indonésia.',
   },
