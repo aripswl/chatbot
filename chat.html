@@ -36,8 +36,8 @@
             class="logo"
           />
           <div class="header-text">
-            <div class="sitatik-title">SiTatik</div>
-            <div class="subtext">Asisten Sensus Ekonomi</div>
+            <div class="sitatik-title">SiBima</div>
+            <div class="subtext">Badan Informasi Masyarakat Ekonomi</div>
           </div>
         </div>
 
@@ -47,14 +47,12 @@
             class="menu-icon"
             onclick="toggleMenu()"
           >
-            ☰
+            X
           </div>
           <div
             class="menu-dropdown"
             id="menuDropdown"
           >
-            <button onclick="changeLanguage('id')">Bahasa Indonesia</button>
-            <button onclick="changeLanguage('su')">Bahasa Sunda</button>
             <button onclick="endChat()">Akhiri Obrolan</button>
           </div>
         </div>
@@ -65,12 +63,7 @@
         id="chatbox"
         class="chat-box"
       >
-        <div
-          class="chat-message bot-message welcome-message"
-          id="welcome-message"
-        >
-          <!-- Pesan akan diisi oleh JavaScript -->
-        </div>
+        <!-- Pesan sambutan akan di-generate dari script.js -->
       </div>
 
       <!-- Input Chat -->
@@ -80,28 +73,17 @@
           id="userInput"
           placeholder="Ketik pesan di sini..."
         />
-        <button onclick="handleTextInput()">Kirim</button>
+        <button>Kirim</button>
       </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- JavaScript Tambahan (khusus UI) -->
     <script>
-      // Ambil parameter nama dari URL
-      function getQueryParam(key) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(key) || 'Pengguna';
-      }
-
-      const nama = getQueryParam('nama');
-      const age = getQueryParam('umur');
-
-      // Fungsi dropdown menu
       function toggleMenu() {
         const menu = document.getElementById('menuDropdown');
         menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
       }
 
-      // Placeholder untuk fungsi lain
       function changeLanguage(lang) {
         alert('Fungsi ubah bahasa belum diimplementasikan.');
       }
@@ -110,46 +92,9 @@
         alert('Obrolan telah diakhiri. Terima kasih!');
         window.location.href = 'index.html';
       }
-
-      function handleTextInput() {
-        const input = document.getElementById('userInput');
-        const message = input.value.trim();
-        if (!message) return;
-
-        const chatbox = document.getElementById('chatbox');
-
-        // Tampilkan pesan user
-        const userBubble = document.createElement('div');
-        userBubble.className = 'chat-message user-message';
-        userBubble.textContent = message;
-        chatbox.appendChild(userBubble);
-
-        input.value = '';
-
-        // Scroll ke bawah otomatis
-        chatbox.scrollTop = chatbox.scrollHeight;
-
-        // Tambahkan respons bot sederhana
-        const botBubble = document.createElement('div');
-        botBubble.className = 'chat-message bot-message';
-        botBubble.innerHTML = 'Terima kasih atas pertanyaannya. Saya akan segera menjawab.';
-        chatbox.appendChild(botBubble);
-        chatbox.scrollTop = chatbox.scrollHeight;
-      }
     </script>
+
+    <!-- ✅ Panggil script utama kamu -->
     <script src="script.js"></script>
-    <script>
-      // Ambil nama dari URL dan tampilkan menu utama saat halaman terbuka
-      window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const name = urlParams.get('name') || 'pengguna';
-
-        // Simpan nama ke localStorage biar bisa dipakai di script.js
-        localStorage.setItem('userName', name);
-
-        // Tampilkan menu utama chatbot otomatis
-        renderMainMenu();
-      });
-    </script>
   </body>
 </html>

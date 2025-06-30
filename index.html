@@ -47,7 +47,7 @@
         <div class="welcome-card">
           <h2>Halo!</h2>
           <p>Selamat datang di Layanan Informasi Sensus Ekonomi 2026 Kabupaten Tasikmalaya.</p>
-          <p>Sebelum kita mulai, yuk isi data diri singkat berikut:</p>
+          <p>Sebelum kita mulai, silakan isi data berikut:</p>
 
           <form
             class="pre-chat-form"
@@ -56,21 +56,32 @@
             onsubmit="return validateForm()"
           >
             <div class="form-group">
-              <label for="name">Nama Lengkap Anda:</label>
-              <input type="text" id="name" name="nama"
-              <!-- ✅ ubah name jadi 'nama' -->
+              <label for="bahasa">Pilih Bahasa:</label>
+              <select
+                id="bahasa"
+                name="bahasa"
+                required
+              >
+                >
+                <option value="">-- Pilih Bahasa --</option>
+                <option value="id">Bahasa Indonesia</option>
+                <option value="su">Basa Sunda</option>
+              </select>
             </div>
+
             <div class="form-group">
-              <label for="age">Umur Anda (dalam tahun):</label>
+              <label for="umur">Umur Anda:</label>
               <input
                 type="number"
-                id="age"
+                id="umur"
                 name="umur"
                 placeholder="Contoh: 22"
                 required
               />
             </div>
-            <div class="privacy-note">*Data ini akan digunakan untuk keperluan Sensus Ekonomi 2026 dan dijamin kerahasiaannya sesuai undang-undang.</div>
+
+            <div class="privacy-note">*Data ini hanya digunakan untuk menyesuaikan informasi dalam Sensus Ekonomi 2026.</div>
+
             <button
               type="submit"
               class="submit-button"
@@ -82,12 +93,12 @@
       </div>
     </div>
 
-    <!-- JS Validasi (Opsional) -->
+    <!-- Validasi -->
     <script>
       function validateForm() {
-        const name = document.getElementById('name').value.trim();
-        const age = document.getElementById('age').value.trim();
-        if (!name || !age) {
+        const bahasa = document.getElementById('bahasa').value.trim();
+        const umur = document.getElementById('umur').value.trim();
+        if (!bahasa || !umur) {
           alert('Mohon lengkapi semua data!');
           return false;
         }
