@@ -11,7 +11,7 @@ body {
   font-size: 0.75em;
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* pakai min-height, bukan height */
+  min-height: 100dvh; /* pakai min-height, bukan height */
   width: 100vw;
   overflow-x: hidden;
   background: linear-gradient(135deg, #e0f2f7, #bbdefb);
@@ -477,5 +477,16 @@ body {
 
   .chat-box {
     padding-bottom: 70px; /* supaya tidak ketimpa input */
+  }
+}
+html,
+body {
+  height: 100%;
+  overscroll-behavior: contain;
+}
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
   }
 }
