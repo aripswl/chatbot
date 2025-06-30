@@ -11,15 +11,13 @@ body {
   font-size: 0.75em;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 100vh; /* pakai min-height, bukan height */
   width: 100vw;
   overflow-x: hidden;
-  overflow-y: auto;
   background: linear-gradient(135deg, #e0f2f7, #bbdefb);
   color: #333;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
 }
 
 /* ✅ Chat Container */
@@ -467,10 +465,17 @@ body {
 }
 @media (max-width: 768px) {
   .text-input-area {
-    padding-bottom: env(safe-area-inset-bottom, 10px); /* biar aman di iPhone & Android notch */
-    position: sticky;
+    position: fixed;
     bottom: 0;
-    z-index: 10;
-    background-color: #fff;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+  }
+
+  .chat-box {
+    padding-bottom: 70px; /* supaya tidak ketimpa input */
   }
 }
