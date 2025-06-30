@@ -7,27 +7,18 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>SiBima - Badan Informasi Masyarakat Ekonomi</title>
-
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS -->
-    <link
       rel="stylesheet"
       href="style.css"
     />
   </head>
-
   <body>
     <div class="chat-container">
-      <!-- Header Chat -->
+      <!-- Header -->
       <div class="chat-header">
         <div class="header-left">
           <img
@@ -40,8 +31,6 @@
             <div class="subtext">Badan Informasi Masyarakat Ekonomi</div>
           </div>
         </div>
-
-        <!-- Menu Dropdown -->
         <div class="menu-wrapper">
           <div
             class="menu-icon"
@@ -62,9 +51,7 @@
       <div
         id="chatbox"
         class="chat-box"
-      >
-        <!-- Pesan sambutan akan di-generate dari script.js -->
-      </div>
+      ></div>
 
       <!-- Input Chat -->
       <div class="text-input-area">
@@ -73,28 +60,30 @@
           id="userInput"
           placeholder="Ketik pesan di sini..."
         />
-        <button>Kirim</button>
+        <button onclick="handleUserInput()">Kirim</button>
       </div>
     </div>
 
-    <!-- JavaScript Tambahan (khusus UI) -->
+    <!-- Menu + Script -->
     <script>
       function toggleMenu() {
         const menu = document.getElementById('menuDropdown');
         menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
       }
 
-      function changeLanguage(lang) {
-        alert('Fungsi ubah bahasa belum diimplementasikan.');
-      }
-
       function endChat() {
         alert('Obrolan telah diakhiri. Terima kasih!');
         window.location.href = 'index.html';
       }
+
+      document.getElementById('userInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          handleUserInput();
+        }
+      });
     </script>
 
-    <!-- ✅ Panggil script utama kamu -->
+    <!-- Main Script kamu -->
     <script src="script.js"></script>
   </body>
 </html>
