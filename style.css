@@ -70,6 +70,7 @@ body {
   background: transparent;
   color: #ffffff;
   padding: 15px 20px;
+  padding-bottom: 27px;
   display: flex;
   justify-content: space-between;
   align-items: center;
