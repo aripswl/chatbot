@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -19,15 +18,13 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
-      href="style.css"
+      href="chat.css"
     />
   </head>
   <body class="mobile-sim">
     <div class="chat-container">
-      <!-- Header -->
       <div class="chat-header">
         <div class="header-left">
           <div class="header-text">
@@ -35,8 +32,6 @@
             <div class="subtext">Sensus Ekonomi Membantu Aktivitas Rakyat</div>
           </div>
         </div>
-
-        <!-- Tombol × tanpa menu -->
         <button
           class="close-button"
           onclick="endChat()"
@@ -44,14 +39,10 @@
           &times;
         </button>
       </div>
-
-      <!-- Chat Box -->
       <div
         id="chatbox"
         class="chat-box"
       ></div>
-
-      <!-- Input Chat -->
       <div class="text-input-area">
         <input
           type="text"
@@ -62,27 +53,20 @@
         <button onclick="handleUserInput()">Kirim</button>
       </div>
     </div>
-
-    <!-- Script -->
     <script>
       function endChat() {
-        window.location.href = 'index.html'; // Kembali ke halaman awal
+        window.location.href = 'index.html';
       }
-
       document.getElementById('userInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-          handleUserInput();
-        }
+        if (e.key === 'Enter') handleUserInput();
       });
       const input = document.getElementById('userInput');
       input.addEventListener('focus', () => {
         setTimeout(() => {
           input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 300); // delay agar scroll menyesuaikan munculnya keyboard
+        }, 300);
       });
     </script>
-
-    <!-- Main Script kamu -->
     <script src="script.js"></script>
   </body>
 </html>
