@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>SiBima - Badan Informasi Masyarakat Ekonomi</title>
+    <title>Semar - Sensus Ekonomi Membantu Aktivitas Rakyat</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -21,31 +21,19 @@
       <!-- Header -->
       <div class="chat-header">
         <div class="header-left">
-          <img
-            src="logo bps.png"
-            alt="Logo bps"
-            class="logo"
-          />
           <div class="header-text">
-            <div class="siBima-title">SiBima</div>
+            <div class="Semar-title">Semar</div>
             <div class="subtext">Badan Informasi Masyarakat Ekonomi</div>
           </div>
         </div>
-        <div class="menu-wrapper">
-          <div
-            class="close-button"
-            onclick="toggleMenu()"
-          >
-            &times;
-          </div>
 
-          <div
-            class="menu-dropdown"
-            id="menuDropdown"
-          >
-            <button onclick="endChat()">Akhiri Obrolan</button>
-          </div>
-        </div>
+        <!-- Tombol × tanpa menu -->
+        <button
+          class="close-button"
+          onclick="endChat()"
+        >
+          &times;
+        </button>
       </div>
 
       <!-- Chat Box -->
@@ -65,16 +53,10 @@
       </div>
     </div>
 
-    <!-- Menu + Script -->
+    <!-- Script -->
     <script>
-      function toggleMenu() {
-        const menu = document.getElementById('menuDropdown');
-        menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-      }
-
       function endChat() {
-        alert('Obrolan telah diakhiri. Terima kasih!');
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // Kembali ke halaman awal
       }
 
       document.getElementById('userInput').addEventListener('keypress', function (e) {
