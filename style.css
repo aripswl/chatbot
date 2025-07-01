@@ -33,7 +33,7 @@ body {
   background-color: #ffffff;
 
   width: 100%;
-  max-width: 400px; /* Diperkecil untuk tampilan mobile */
+  max-width: 100vw; /* Diperkecil untuk tampilan mobile */
   height: 100vh;
 
   display: flex;
@@ -209,7 +209,7 @@ body {
 .chat-box {
   flex: 1 1 auto;
   padding: 15px;
-  padding-bottom: 120px;
+  padding-bottom: 140px;
   overflow-y: auto;
   background-color: transparent;
   display: flex;
@@ -332,4 +332,13 @@ body {
   .chat-box {
     padding-bottom: env(safe-area-inset-bottom, 80px);
   }
+}
+/* ✅ Anti Scroll Horizontal */
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100%;
 }
