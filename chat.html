@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>Semar - Sensus Ekonomi Membantu Aktivitas Rakyat</title>
+    <meta
+      name="theme-color"
+      content="#ffffff"
+    />
+    <title>Semar - Sensus Ekonomi Membantu Aktivitas Rakyat</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -48,6 +52,7 @@
           type="text"
           id="userInput"
           placeholder="Ketik pesan di sini..."
+          autocomplete="off"
         />
         <button onclick="handleUserInput()">Kirim</button>
       </div>
@@ -63,6 +68,12 @@
         if (e.key === 'Enter') {
           handleUserInput();
         }
+      });
+      const input = document.getElementById('userInput');
+      input.addEventListener('focus', () => {
+        setTimeout(() => {
+          input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300); // delay agar scroll menyesuaikan munculnya keyboard
       });
     </script>
 
