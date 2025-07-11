@@ -53,19 +53,45 @@
         <button onclick="handleUserInput()">Kirim</button>
       </div>
     </div>
+    <div
+      id="modalUcapan"
+      class="modal"
+    >
+      <div class="modal-content">
+        <p id="modalIsi">
+          <strong
+            >Terima kasih telah menggunakan layanan chatbot SEMAR ini.<br />
+            Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju! 🇮🇩</strong
+          >
+        </p>
+        <button onclick="kembaliKeBeranda()">Kembali ke Beranda</button>
+      </div>
+    </div>
     <script>
+      let bahasa = localStorage.getItem('bahasa') || 'id'; // Default-nya 'indonesia'
+
       function endChat() {
+        const modal = document.getElementById('modalUcapan');
+        const modalIsi = document.getElementById('modalIsi');
+
+        if (currentLanguage === 'su') {
+          modalIsi.innerHTML = `
+        <strong>Hatur nuhun parantos ngagunakeun layanan chatbot Semar ieu.<br />
+        Tong hilap dukung Sénsus Ékonomi pikeun Indonesia nu langkung maju! 🇮🇩 </strong>
+      `;
+        } else {
+          modalIsi.innerHTML = `
+        <strong>Terima kasih telah menggunakan layanan chatbot Semar ini.<br />
+        Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju! 🇮🇩 </strong>
+      `;
+        }
+
+        modal.style.display = 'flex';
+      }
+
+      function kembaliKeBeranda() {
         window.location.href = 'index.html';
       }
-      document.getElementById('userInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') handleUserInput();
-      });
-      const input = document.getElementById('userInput');
-      input.addEventListener('focus', () => {
-        setTimeout(() => {
-          input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 300);
-      });
     </script>
     <script src="script.js"></script>
   </body>

@@ -12,7 +12,7 @@ const langData = {
     end: 'Terima kasih telah menggunakan layanan Chatbot Semar. Jangan lupa dukung Sensus Ekonomi demi Indonesia yang lebih maju!',
   },
   su: {
-    getWelcome: () => `👋 Wilujeng sumping kuring <b>Semar</b>! Anjeun nuju ngagunakeun <b>Basa Sunda</b>. Mangga ketik patarosan ngeunaan Sénsus Ékonomi 2026, abdi siap ngabantosan!`,
+    getWelcome: () => `👋 Wilujeng sumping, abdi <b>Semar</b>. Anjeun nuju ngagunakeun <b>basa Sunda</b>. Mangga, simkuring sayaga pikeun ngabantuan panjenengan ngetikkeun patarosan perkawis Sénsus Ékonomi 2026.`,
     prompt: 'Mangga ketik patarosan anjeun!',
     end: 'Hatur nuhun parantos nganggo Semar. Dugi ka pendakan deui!',
   },
@@ -20,16 +20,22 @@ const langData = {
 
 const responses = [
   {
-    keywords: ['sensus ekonomi', 'apa itu sensus', 'sensus ekonomi ekonomi', 'sensus ekonomi kapan', 'sensus ekonomi online', 'sensus ekonomi bps'],
-    keywords_su: ['sénsus ekonomi', 'apa itu sénsus', 'sénsus ekonomi ekonomi', 'sénsus ekonomi kapan', 'sénsus ekonomi online', 'sénsus ekonomi bps'],
-    id: 'Sensus Ekonomi adalah pendataan lengkap seluruh kegiatan ekonomi di Indonesia kecuali sektor pertanian.',
-    su: 'Sénsus Ékonomi nyaéta pendataan lengkep sadaya kagiatan ékonomi di Indonésia kajaba sektor pertanian.',
+    keywords: ['sensus ekonomi', 'apa itu sensus', 'sensus ekonomi ', 'sensus ekonomi online', 'sensus ekonomi bps'],
+    keywords_su: ['sénsus ekonomi', 'naon ari sénsus', 'sénsus ekonomi', 'naon sensus'],
+    id: 'Sensus Ekonomi adalah kegiatan pendataan yang dilakukan oleh Badan Pusat Statistik (BPS) untuk mengumpulkan informasi seluruh kegiatan usaha ekonomi di Indonesia, kecuali sektor pertanian.',
+    su: 'Sénsus Ékonomi nya éta kagiatan pendataan sakumna usaha ékonomi, iwal ti sektor pertanian, anu dilakukeun ku Badan Pusat Statistik (BPS) pikeun nyayagikeun data dasar perekonomian nasional.',
   },
   {
-    keywords: ['jadwal', 'kapan sensus', 'kapan', 'waktu sensus', 'kapan sensus ekonomi', 'kapan sensus kapan', 'jadwal sensus'],
-    keywords_su: ['jadwal', 'kapan sénsus', 'kapan', 'waktu sénsus', 'kapan sénsus ekonomi', 'kapan sénsus kapan'],
+    keywords: ['jadwal', 'kapan sensus', 'kapan', 'waktu sensus', 'kapan sensus ekonomi', 'kapan sensus ', 'jadwal sensus'],
+    keywords_su: ['jadwal', 'kapan sénsus', 'kapan', 'waktu sénsus', 'kapan sénsus ekonomi', 'kapan sénsus kapan', 'iraha sensus'],
     id: 'Sensus Ekonomi 2026 dilaksanakan bulan Mei–Juni 2026 di seluruh Indonesia.',
     su: 'Sénsus Ékonomi 2026 dilaksanakeun dina bulan Méi–Juni 2026 di sakuliah Indonésia.',
+  },
+  {
+    keywords: ['dimana sensus', 'tempat sensus'],
+    keywords_su: ['dimana sensus', 'tempat senus'],
+    id: 'Sensus dilakukan di tempat usaha masyarakat di seluruh wilayah Indonesia, baik di kota maupun desa.Petugas BPS akan mendatangi langsung atau bisa juga dilakukan secara online.',
+    su: ' Sénsus dilaksanakeun di tempat usaha masarakat di sakuliah wewengkon Indonésia, boh di kota atanapi di désa.Petugas BPS bade sumping langsung ka lokasi usaha atanapi tiasa ogé ngalakukeun pendataan sacara online.',
   },
   {
     keywords: ['kerahasiaan', 'data aman', 'keamanan data', 'pengumpulan data aman', 'data aman rahasia', 'data aman disimpan'],
@@ -50,8 +56,8 @@ const responses = [
     su: 'Sénsus Ékonomi dilakukeun ku petugas resmi ti BPS anu geus boga identitas jeung surat tugas.',
   },
   {
-    keywords: ['call center', 'hubungi', 'kontak', 'nomor bps', 'telepon sensus', 'hubungi bps'],
-    keywords_su: ['call center', 'hubungi', 'kontak', 'nomor bps', 'telepon sénsus', 'hubungi bps'],
+    keywords: ['call center', 'hubungi', 'kontak yang dapat dihubungi', 'nomor bps', 'telepon sensus', 'hubungi bps'],
+    keywords_su: ['call center', 'hubungi', 'kontak', 'nomor bps', 'telepon sénsus', 'hubungi bps', 'urang kudu ngahubungan kamana', 'ngahubungan'],
     id: 'Silakan hubungi Call Center BPS Tasikmalaya di (0265) XXX-XXX pada jam kerja.',
     su: 'Mangga hubungi Call Center BPS Tasikmalaya di (0265) XXX-XXX dina jam damel.',
   },
@@ -87,7 +93,7 @@ const responses = [
   },
   {
     keywords: ['apa itu se2026', 'pengertian se2026', 'kepanjangan se2026', 'se2026 dijelaskan', 'se2026 itu apa'],
-    keywords_su: ['naon se2026', 'hartina se2026', 'penjelasan se2026', 'se2026 téh naon', 'ngarti se2026'],
+    keywords_su: ['se2026', 'hartina se2026', 'penjelasan se2026', 'se2026 téh naon', 'ngarti se2026'],
     id: 'SE2026 adalah kegiatan pendataan lengkap seluruh unit usaha di Indonesia yang dilakukan oleh BPS setiap 10 tahun sekali.',
     su: 'SE2026 téh pendataan lengkep kana sakabéh unit usaha di Indonesia, dilakukeun ku BPS unggal 10 taun sakali.',
   },
