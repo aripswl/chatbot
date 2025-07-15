@@ -85,11 +85,39 @@
       function validateForm() {
         const bahasa = document.getElementById('bahasa').value.trim();
         const umur = document.getElementById('umur').value.trim();
+
         if (!bahasa || !umur) {
           alert('Mohon lengkapi semua data!');
           return false;
         }
-        return true;
+
+        // Kirim data dulu, lalu arahkan ke chat.html
+        kirimDataKeSheet(bahasa, umur);
+
+        // Hentikan submit form default
+        return false;
+      }
+
+      function kirimDataKeSheet(bahasa, umur) {
+        console.log('Mengirim:', bahasa, umur); // log tambahan
+
+        fetch('https://script.google.com/macros/s/AKfycbwqQpEVInrp7-yU-naVh0vS0EQywqdvSqUcKMLpya3vUAjAmehGk2vIsybvsAqYB0zL/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ bahasa: bahasa, umur: umur }),
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            console.log('Data berhasil dikirim:', result);
+            // Setelah sukses kirim data, pindah halaman
+            window.location.href = `chat.html?bahasa=${bahasa}&umur=${umur}`;
+          })
+          .catch((error) => {
+            console.error('Gagal mengirim data:', error);
+            alert('Gagal mengirim data. Silakan coba lagi.');
+          });
       }
     </script>
   </body>
