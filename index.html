@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,8 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>Selamat Datang di Semar</title>
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -14,11 +17,14 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS -->
     <link
       rel="stylesheet"
       href="home.css"
     />
   </head>
+
   <body class="mobile-sim">
     <div class="chat-container pre-chat-container">
       <div class="chat-header">
@@ -36,16 +42,17 @@
           &times;
         </button>
       </div>
+
       <div class="garis-full"></div>
+
       <div class="pre-chat-content">
         <div class="welcome-card">
           <h2>Halo!</h2>
           <p>Selamat datang di Layanan Informasi Sensus Ekonomi 2026 Kabupaten Tasikmalaya.</p>
           <p>Sebelum kita mulai, silakan isi data berikut:</p>
+
           <form
             class="pre-chat-form"
-            action="chat.html"
-            method="GET"
             onsubmit="return validateForm()"
           >
             <div class="form-group">
@@ -60,17 +67,22 @@
                 <option value="su">Basa Sunda</option>
               </select>
             </div>
+
             <div class="form-group">
               <label for="umur">Umur Anda:</label>
               <input
                 type="number"
                 id="umur"
                 name="umur"
+                min="1"
+                max="120"
                 placeholder="Contoh: 22"
                 required
               />
             </div>
+
             <div class="privacy-note">*Data ini hanya digunakan untuk menyesuaikan informasi dalam Sensus Ekonomi 2026.</div>
+
             <button
               type="submit"
               class="submit-button"
@@ -81,32 +93,39 @@
         </div>
       </div>
     </div>
+
     <script>
       async function kirimDataKeSupabase(bahasa, umur) {
         const SUPABASE_URL = 'https://ohitkaiyvljdihsyrrwo.supabase.co';
         const API_KEY =
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9oaXRrYWl5dmxqZGloc3lycndvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1OTA2MTQsImV4cCI6MjA2ODE2NjYxNH0.aWGjugfwFPev_2OdM-wKD6riiTnNHdNwk5gPQkgMxTU';
 
-        const response = await fetch(`${SUPABASE_URL}/rest/v1/data_respon_pengguna`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            apikey: API_KEY,
-            Authorization: `Bearer ${API_KEY}`,
-            Prefer: 'return=representation',
-          },
-          body: JSON.stringify({
-            bahasa: bahasa,
-            umur: parseInt(umur),
-          }),
-        });
+        try {
+          const response = await fetch(`${SUPABASE_URL}/rest/v1/data_respon_pengguna`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              apikey: API_KEY,
+              Authorization: `Bearer ${API_KEY}`,
+              Prefer: 'return=representation',
+            },
+            body: JSON.stringify({
+              bahasa: bahasa,
+              umur: parseInt(umur),
+            }),
+          });
 
-        if (response.ok) {
-          console.log('✅ Data berhasil dikirim ke Supabase');
-          window.location.href = `chat.html?bahasa=${bahasa}&umur=${umur}`;
-        } else {
-          console.error('❌ Gagal kirim:', await response.text());
-          alert('Gagal mengirim data. Silakan coba lagi.');
+          if (response.ok) {
+            console.log('✅ Data berhasil dikirim ke Supabase');
+            window.location.href = `chat.html?bahasa=${bahasa}&umur=${umur}`;
+          } else {
+            const err = await response.text();
+            console.error('❌ Gagal kirim:', err);
+            alert('❌ Gagal mengirim data. Silakan cek koneksi atau konfigurasi Supabase Anda.');
+          }
+        } catch (error) {
+          console.error('❌ Error jaringan:', error);
+          alert('❌ Terjadi kesalahan jaringan. Coba lagi nanti.');
         }
       }
 
@@ -114,13 +133,13 @@
         const bahasa = document.getElementById('bahasa').value.trim();
         const umur = document.getElementById('umur').value.trim();
 
-        if (!bahasa || !umur) {
-          alert('Mohon lengkapi semua data!');
+        if (!bahasa || !umur || isNaN(umur) || umur < 1 || umur > 120) {
+          alert('Mohon isi bahasa dan umur dengan benar.');
           return false;
         }
 
         kirimDataKeSupabase(bahasa, umur);
-        return false; // agar tidak submit form default
+        return false; // supaya tidak reload halaman
       }
     </script>
   </body>
